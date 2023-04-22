@@ -1,0 +1,12 @@
+def main():
+    a = input()
+
+    with open('morse_alpha.txt', 'r') as f:
+        list1 = [line.split() for line in f.readlines()]
+
+    translated_line = ''.join([list1[element][1] for element in range(len(list1)) for letter in a if letter.upper() == list1[element][0]] + ['/'] if letter == ' ')
+
+    print(translated_line)
+    
+if __name__ == '__main__':
+    main()
